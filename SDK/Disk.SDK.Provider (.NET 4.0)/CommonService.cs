@@ -10,7 +10,7 @@ namespace Disk.SDK.Provider
     /// <summary>
     /// Represents implementation of the common services for .NET 4.0 platform.
     /// </summary>
-    public class CommonService : ICommonService
+    internal class CommonService : ICommonService
     {
         /// <summary>
         /// Sets the custom header for web-request.

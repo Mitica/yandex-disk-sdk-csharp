@@ -10,11 +10,12 @@ namespace Disk.SDK.CommonServices
     /// <summary>
     /// Represents entry point for common service.
     /// </summary>
-    internal static class CommonServiceManager
+    public static class CommonServiceManager
     {
-        private const string ASSEMBLY_NAME              = "Disk.SDK.Provider",
-                             SERVICE_NAME               = "Disk.SDK.Provider.CommonService",
-                             SERVICE_FULL_NAME_FORMAT   = "{0}, {1}";
+        /// <summary>
+        /// Manager's CommonService creator.
+        /// </summary>
+        public static ICommonServiceCreator ServiceCreator = new DefaultCommonServiceCreator();
 
         private static ICommonService commonService;
 
@@ -24,14 +25,7 @@ namespace Disk.SDK.CommonServices
         /// <returns>The common service implementation.</returns>
         private static ICommonService CreateService()
         {
-            var assemblyName = new AssemblyName { Name = ASSEMBLY_NAME };
-            var commonServiceType = Type.GetType(string.Format(SERVICE_FULL_NAME_FORMAT, SERVICE_NAME, assemblyName.FullName), false);
-            if (commonServiceType == null)
-            {
-                throw new SdkProviderException();
-            }
-
-            return (ICommonService)Activator.CreateInstance(commonServiceType);
+            return ServiceCreator.Create();
         }
 
         /// <summary>

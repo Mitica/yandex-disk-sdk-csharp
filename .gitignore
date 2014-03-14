@@ -9,3 +9,14 @@ Samples/SdkSample.WinPhone/bin/*
 Samples/SdkSample.WinPhone/obj/*
 Samples/SdkSample.WinRT/bin/*
 Samples/SdkSample.WinRT/obj/*
+
+####################
+## Visual Studio
+####################
+*.suo
+*.user
+[Bb]in/
+[Oo]bj/
+_ReSharper.*
+*.ReSharper.user
+*.resharper.user

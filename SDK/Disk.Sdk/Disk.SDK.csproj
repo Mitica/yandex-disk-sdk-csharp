@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CommonServices\CommonServiceManager.cs" />
+    <Compile Include="CommonServices\ICommonServiceCreator.cs" />
     <Compile Include="IBrowser.cs" />
     <Compile Include="Utils\HandlerExtensions.cs" />
     <Compile Include="DiskItemInfo.cs" />

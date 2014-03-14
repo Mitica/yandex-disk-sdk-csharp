@@ -9,7 +9,7 @@ namespace Disk.SDK.CommonServices
     /// <summary>
     /// Represents interface for platform specific functionality.
     /// </summary>
-    internal interface ICommonService
+    public interface ICommonService
     {
         /// <summary>
         /// Sets the custom header for web-request.
